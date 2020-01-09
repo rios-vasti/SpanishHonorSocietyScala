@@ -1,5 +1,9 @@
 .bloop/
 .metals/
 project/
-target/
+target/*
+!target/scala-2.12/
+target/scala-2.12/*
+!target/scala-2.12/api/
+
 .scalafmt.conf

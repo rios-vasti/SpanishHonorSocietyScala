@@ -2,17 +2,45 @@ package internal
 
 import java.util.NoSuchElementException
 
+/**
+ * A class to store a list of Members
+ * 
+ * The class has no arguments when created 
+ * as the array is not of fixed size
+ * 
+ * @constructor Create a new expandable array of Members
+ * @author Jonathan Rotter
+ * @version 1.0
+ * 
+ */ 
 class MemberArray extends scala.collection.mutable.IndexedSeq[Member] {
 
   private var members: Array[Member] = new Array(16)
   private var memberCount: Int = 0
 
-  def update(idx: Int, elem: Member) { members(idx) = elem }
+  /** 
+   * @param idx The index of the array being set to `elem`
+   * @param elem The value to set the array at `idx`  
+   */
+  def update(idx: Int, elem: Member): Unit = { members(idx) = elem }
 
+  /** 
+   * @return The element at index `idx`
+   * @param idx The index of the array to get
+   */
   def apply(idx: Int): Member = members(idx)
 
+  /** 
+   * @return The number of members in the array currently
+   */
   def length: Int = memberCount
 
+  /**
+   * @throws NoSuchElementException Throws an exception if `id` is not found in the array
+   * @return Returns the instance of `Member` with the given `id`
+   * @param id The id number of the `Member` to look for
+   */
+  @throws(classOf[NoSuchElementException])
   def get(id: Int): Member = {
     if (memberCount == 0) {
       throw new NoSuchElementException(s"ID not found: ${id}")
@@ -44,6 +72,10 @@ class MemberArray extends scala.collection.mutable.IndexedSeq[Member] {
     return members(helper(0, memberCount))
   }
 
+  /**
+   * @param m The `Member` to add to the array. Expands the array if full
+   * @return Returns itself
+   */
   def +=(m: Member) = {
     if (memberCount + 1 >= members.length) {
       var tmp = members
@@ -65,6 +97,12 @@ class MemberArray extends scala.collection.mutable.IndexedSeq[Member] {
     this
   }
 
+  /**
+   * @throws NoSuchElementException Throws an exception if the `id` is not found
+   * @param id The `id` of the `Member` to remove from the array
+   * @return Returns itself
+   */
+  @throws(classOf[NoSuchElementException])
   def -=(id: Int) = {
     if (memberCount == 0) {
       throw new NoSuchElementException(s"ID not found: ${id} because the array is empty")
@@ -96,6 +134,10 @@ class MemberArray extends scala.collection.mutable.IndexedSeq[Member] {
     this
   }
 
+
+  /**
+   * @return Returns an iterator of `Member`
+   */
   override def iterator = new Iterator[Member] {
     var index = 0
     def hasNext: Boolean = index < memberCount
