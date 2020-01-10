@@ -28,7 +28,7 @@ private var date: String, private var membersAttending: List[EventNameAndPoints]
     {
         membersAttending = newStudentList
     }
-    def addMoreMmebers (newStudentList: List[EventNameAndPoints]): Unit =
+    def addMoreMembers (newStudentList: List[EventNameAndPoints]): Unit =
     {
         membersAttending = membersAttending ::: newStudentList
     }
