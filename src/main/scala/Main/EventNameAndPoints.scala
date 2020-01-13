@@ -1,4 +1,4 @@
-class EventNameAndPoints( private name: String, private numPoints: Double)
+class EventNameAndPoints( private val name: String, private val numPoints: Double)
 {
-    
+
 }

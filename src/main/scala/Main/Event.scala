@@ -1,5 +1,4 @@
-class Event (private var eventName: String, private var typeOfPoint: PointType, private var sameValueOfPointsPerMmeber: Boolean, 
-private var date: String, private var membersAttending: List[EventNameAndPoints] )
+class Event (private var eventName: String, private var typeOfPoint: PointType, private var sameValueOfPointsPerMmeber: Boolean, private var date: String, private var membersAttending: List[EventNameAndPoints] )
 {
     def getName: String = eventName
     def getPointType: PointType = typeOfPoint

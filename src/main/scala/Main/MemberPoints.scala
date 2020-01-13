@@ -16,17 +16,18 @@ class MemberPoints()
     def getTotal: Double = culture + communityService + fundraising + miscellaneous - deduct
 
 
-    def increaseCulture(num: Double):Unit = num + culture
-    def increaseCommunityService(num: Double):Unit = num + communityService
-    def increaseFundraising(num: Double):Unit = num + fundraising
-    def increaseMiscellaneous(num: Double):Unit = num + miscellaneous
-    def increaseDeduct(num: Double):Unit = num + deduct
+    def increaseCulture(num: Double):Unit = culture += num 
+    def increaseCommunityService(num: Double):Unit = communityService += num 
+    def increaseFundraising(num: Double):Unit = fundraising += num 
+    def increaseMiscellaneous(num: Double):Unit = miscellaneous += num 
+    def increaseDeduct(num: Double):Unit = deduct += num 
 
-    def decreaseCulture(num: Double):Unit = num - culture
-    def decreaseCommunityService(num: Double):Unit = num - communityService
-    def decreaseFundraising(num: Double):Unit = num - fundraising
-    def decreaseMiscellaneous(num: Double):Unit = num - miscellaneous
-    def decreaseDeduct(num: Double):Unit = num - deduct
+
+    def decreaseCulture(num: Double):Unit = culture -= num 
+    def decreaseCommunityService(num: Double):Unit = communityService -= num 
+    def decreaseFundraising(num: Double):Unit = fundraising -= num 
+    def decreaseMiscellaneous(num: Double):Unit = miscellaneous -= num 
+    def decreaseDeduct(num: Double):Unit = deduct -= num 
     
 
 
