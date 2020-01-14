@@ -1,3 +1,5 @@
+package Main
+
 class EventNameAndPoints( private var name: String, private var numPoints: Double)
 {
     def getName:String = name 

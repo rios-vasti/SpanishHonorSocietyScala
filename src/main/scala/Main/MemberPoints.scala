@@ -1,3 +1,5 @@
+package Main
+
 class MemberPoints()
 {
     private var culture = 0.0

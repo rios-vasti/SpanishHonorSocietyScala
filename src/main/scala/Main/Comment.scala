@@ -1,3 +1,5 @@
+package Main
+
 class Comment(private var date: String, private var title: String, private var comment: String)
 {
     def getDate: String = date 

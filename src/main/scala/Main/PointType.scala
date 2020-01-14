@@ -1,4 +1,4 @@
-
+package Main
 
 object PointType extends Enumeration 
 {

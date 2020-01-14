@@ -2,6 +2,8 @@ package internal
 
 import java.util.NoSuchElementException
 
+import Main.Member
+
 /**
  * A class to store a list of Members
  * 
@@ -50,16 +52,16 @@ class MemberArray extends scala.collection.mutable.IndexedSeq[Member] {
     def helper(low: Int, high: Int): Int = {
       
       //println(s"$low < --- > $high")
-      if (low == high && members(low).id != id) {
+      if (low == high && members(low).getID != id) {
         throw new NoSuchElementException(s"ID not found: ${id}")
       }
       
       val n = (high - low) / 2 + low
-      //println(s"compare id = ${members(n).id}")
-      if (id > members(n).id) {
+      //println(s"compare id = ${members(n).getID}")
+      if (id > members(n).getID) {
         //println("less")
         helper(low, n)
-      } else if (id < members(n).id) {
+      } else if (id < members(n).getID) {
         println("more")
         helper(n, high)
       } else {
@@ -86,7 +88,7 @@ class MemberArray extends scala.collection.mutable.IndexedSeq[Member] {
     }
 
     var n = memberCount
-    while (n > 0 && members(n - 1).id < m.id) {
+    while (n > 0 && members(n - 1).getID < m.getID) {
       members(n) = members(n - 1)
       n -= 1
     }
@@ -109,14 +111,14 @@ class MemberArray extends scala.collection.mutable.IndexedSeq[Member] {
     }
 
     def helper(low: Int, high: Int): Int = {
-      if (low == high && members(low).id != id) {
+      if (low == high && members(low).getID != id) {
         throw new NoSuchElementException(s"ID not found: ${id}")
       }
 
       val n = (high - low) / 2 + low
-      if (id > members(n).id) {
+      if (id > members(n).getID) {
         helper(low, n)
-      } else if (id < members(n).id) {
+      } else if (id < members(n).getID) {
         helper(n, high)
       } else {
         // equal
