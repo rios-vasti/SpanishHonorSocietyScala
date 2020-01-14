@@ -1,4 +1,4 @@
-class Event (private var eventName: String, private var typeOfPoint: String /*PointType*/, private var sameValueOfPointsPerMmeber: Boolean, private var date: String, private var membersAttending: List[String] /* should this be a list of Mmebers or a list of the student ids*/ )
+class Event (private var eventName: String, private var typeOfPoint: String /*PointType*/, private var sameValueOfPointsPerMember: Boolean, private var date: String, private var membersAttending: List[String] /* should this be a list of Members or a list of the student ids*/ )
 {
     def getName: String = eventName
     def getPointType: String /*PointType*/ = typeOfPoint //Should the pointType be of the class pointType or should it be string?
@@ -19,9 +19,9 @@ class Event (private var eventName: String, private var typeOfPoint: String /*Po
     {
         date = newDate
     }
-    def setsameValueOfPointsPerMmeber(allSame: Boolean): Unit = 
+    def setSameValueOfPointsPerMember(allSame: Boolean): Unit = 
     {
-        sameValueOfPointsPerMmeber = allSame
+        sameValueOfPointsPerMember = allSame
     }
     def setMembersAttending(newStudentList: List[String]): Unit =
     {
@@ -39,7 +39,7 @@ class Event (private var eventName: String, private var typeOfPoint: String /*Po
     {
         //FINISH
     }
-    if (sameValueOfPointsPerMmeber)
+    if (sameValueOfPointsPerMember)
     {
         allSameValue(membersAttending)
     }

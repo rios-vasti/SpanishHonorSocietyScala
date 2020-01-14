@@ -2,7 +2,7 @@ class MemberPoints()
 {
     private var culture = 0.0
     private var communityService = 0.0
-    private var  fundraising = 0.0 
+    private var fundraising = 0.0 
     private var miscellaneous = 0.0 
     private var deduct = 0.0
 

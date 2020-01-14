@@ -3,7 +3,7 @@ class Member(private var firstName: String, private var lastName: String, privat
     private var comments: List[Comment] 
     private var numberOfSemesters = 1 
     private var myPoints: MemberPoints = new MemberPoints() //should this be a var or a val? if this is referencing an instance of a object 
-    private var myEvents:List[EventNameAndPoints] // FINISH need to add a function for adding a new event to the lsit of events
+    private var myEvents:List[EventNameAndPoints] // FINISH need to add a function for adding a new event to the list of events
 
     def getFirstName: String = firstName 
     def getLastName: String = lastName
@@ -15,9 +15,9 @@ class Member(private var firstName: String, private var lastName: String, privat
     def getComments: String = comments.toString() // I am not sure id defining a toString for the comment class is the correct thing to do!! 
     def getLastComment: String = comments.last.toString
 
-    def setNumberOfSemesters( newNumberOfSemsters: Int):Unit = 
+    def setNumberOfSemesters( newNumberOfSemesters: Int):Unit = 
     {
-        numberOfSemesters = newNumberOfSemsters
+        numberOfSemesters = newNumberOfSemesters
     }
     def setFirstName(newFirstName: String): Unit = 
     {
