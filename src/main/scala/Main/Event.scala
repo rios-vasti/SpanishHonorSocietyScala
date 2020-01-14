@@ -1,7 +1,7 @@
-class Event (private var eventName: String, private var typeOfPoint: PointType, private var sameValueOfPointsPerMmeber: Boolean, private var date: String, private var membersAttending: List[EventNameAndPoints] )
+class Event (private var eventName: String, private var typeOfPoint: String /*PointType*/, private var sameValueOfPointsPerMmeber: Boolean, private var date: String, private var membersAttending: List[String] /* should this be a list of Mmebers or a list of the student ids*/ )
 {
     def getName: String = eventName
-    def getPointType: PointType = typeOfPoint
+    def getPointType: String /*PointType*/ = typeOfPoint //Should the pointType be of the class pointType or should it be string?
     def getDate: String = date 
     def getListOfMembersAttending: List[EventNameAndPoints] = membersAttending // Should I return a list of student names or should I return a list of EventNameAndPoints???
     
@@ -10,7 +10,7 @@ class Event (private var eventName: String, private var typeOfPoint: PointType, 
         eventName = newName
     }
 
-    def setTypeOfPoint(newTypeOfPoint: PointType): Unit =
+    def setTypeOfPoint(newTypeOfPoint: String /*PointType*/): Unit =
     {
         typeOfPoint = newTypeOfPoint
     }
@@ -23,29 +23,29 @@ class Event (private var eventName: String, private var typeOfPoint: PointType, 
     {
         sameValueOfPointsPerMmeber = allSame
     }
-    def setMembersAttending(newStudentList: List[EventNameAndPoints]): Unit =
+    def setMembersAttending(newStudentList: List[String]): Unit =
     {
         membersAttending = newStudentList
     }
-    def addMoreMembers (newStudentList: List[EventNameAndPoints]): Unit =
+    def addMoreMembers (newStudentList: List[String]): Unit =
     {
         membersAttending = membersAttending ::: newStudentList
     }
-    def individualValuePerStudent(studentList: EventNameAndPoints):Unit =
+    def individualValuePerStudent(studentList: List[String]):Unit =
     {
         //FINISH
     }
-    def allSameValue(studentList: EventNameAndPoints):Unit =
+    def allSameValue(studentList: List[String]):Unit =
     {
         //FINISH
     }
     if (sameValueOfPointsPerMmeber)
     {
-        allSameValue(studentList)
+        allSameValue(membersAttending)
     }
     else 
     {
-        allSameValue(studentList)
+        allSameValue(membersAttending)
     }
 
     

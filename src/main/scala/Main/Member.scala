@@ -1,16 +1,19 @@
-class Member(private var firstName: String, private var lastName: String, private var email: String, private grade: Int, private birthday: String)
+class Member(private var firstName: String, private var lastName: String, private var email: String, private var grade: Int, private var birthday: String)
 { 
     private var comments: List[Comment] 
     private var numberOfSemesters = 1 
+    private var myPoints: MemberPoints = new MemberPoints() //should this be a var or a val? if this is referencing an instance of a object 
+    private var myEvents:List[EventNameAndPoints] // FINISH need to add a function for adding a new event to the lsit of events
+
     def getFirstName: String = firstName 
     def getLastName: String = lastName
     def getName: String = firstName + lastName
     def getEmail: String = email 
-    def getGrade: String = grade 
+    def getGrade: Int = grade
     def getBirthday: String = birthday
-    def getNumberOfSemesters: String = numberOfSemesters
-    def getComments: String = comments.toString("/n") // I am not sure id defining a toString for the comment class is the correct thing to do!! 
-    def getLastComment: String = comments.last //do I need to add a .toString because the last item is of type comment??
+    def getNumberOfSemesters: Int = numberOfSemesters
+    def getComments: String = comments.toString() // I am not sure id defining a toString for the comment class is the correct thing to do!! 
+    def getLastComment: String = comments.last.toString
 
     def setNumberOfSemesters( newNumberOfSemsters: Int):Unit = 
     {
@@ -45,14 +48,11 @@ class Member(private var firstName: String, private var lastName: String, privat
     {
         numberOfSemesters += 1
     }
-    def addComment(comment: Comment): Unit = 
+    def addComment(newComment: Comment): Unit = 
     {
-        comments::comment
+       // comments::newComment //Need to fix
     }
     
 
-    private var myPoints: MemberPoints = new MemberPoints() //should this be a var or a val? if this is referencing an instance of a object 
-
-    private var myEvents:List[EventNameAndPoints] 
 
 }

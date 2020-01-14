@@ -1,7 +1,12 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Vasti Rios\Documents\GitHub\SpanishHonorSocietyWebsite\src\main\scala\Main\Member.scala:1:110: 'val' expected but identifier found.[0m
-[0m[[0m[31merror[0m] [0m[0mclass Member(private var firstName: String, private var lastName: String, private var email: String, private grade: Int, private birthday: String)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                                                             ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Vasti Rios\Documents\GitHub\SpanishHonorSocietyWebsite\src\main\scala\Main\Member.scala:58:2: identifier expected but eof found.[0m
-[0m[[0m[31merror[0m] [0m[0m}[0m
-[0m[[0m[31merror[0m] [0m[0m ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Vasti Rios\Documents\GitHub\SpanishHonorSocietyWebsite\src\main\scala\Main\Event.scala:6:63: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : List[String][0m
+[0m[[0m[31merror[0m] [0m[0m required: List[EventNameAndPoints][0m
+[0m[[0m[31merror[0m] [0m[0m    def getListOfMembersAttending: List[EventNameAndPoints] = membersAttending // Should I return a list of student names or should I return a list of EventNameAndPoints???[0m
+[0m[[0m[31merror[0m] [0m[0m                                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Vasti Rios\Documents\GitHub\SpanishHonorSocietyWebsite\src\main\scala\Main\Member.scala:3:17: abstract member may not have private modifier[0m
+[0m[[0m[31merror[0m] [0m[0m    private var comments: List[Comment] [0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\Vasti Rios\Documents\GitHub\SpanishHonorSocietyWebsite\src\main\scala\Main\Member.scala:6:17: abstract member may not have private modifier[0m
+[0m[[0m[31merror[0m] [0m[0m    private var myEvents:List[EventNameAndPoints] // FINISH need to add a function for adding a new event to the lsit of events[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
